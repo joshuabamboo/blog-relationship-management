@@ -1,0 +1,1 @@
+Similar to a CRM but for blogs, this app is designed to keep track of artist's blog relationships with the goal of increasing blog coverage.
