@@ -1,0 +1,16 @@
+<h1>Edit Blog Info</h1>
+<%= form_for @blog do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+
+  <%= f.label :contact %>
+  <%= f.text_field :contact %>
+
+  <%= f.label :notes %>
+  <%= f.text_field :notes %>
+
+  <%= f.submit %>
+<% end %>
