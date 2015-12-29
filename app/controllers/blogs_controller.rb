@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   def create
     blog = Blog.new(blog_params)
     if blog.save
-      redirect_to @blog
+      redirect_to blog
     else
       render 'new'
     end
@@ -28,6 +28,14 @@ class BlogsController < ApplicationController
     blog = Blog.find(params[:id])
     blog.update!(blog_params)
     redirect_to blog
+  end
+
+  def destroy
+    binding.pry
+    # @blog = Blog.find(params[:id])
+    # flash[:notice] = "You have successfully deleted #{blog.title}"
+    # @blog.destroy
+    redirect_to 'index'
   end
 
   private
