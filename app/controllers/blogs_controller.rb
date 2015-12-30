@@ -31,7 +31,6 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     # @blog = Blog.find(params[:id])
     # flash[:notice] = "You have successfully deleted #{blog.title}"
     # @blog.destroy
