@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151227165711) do
+ActiveRecord::Schema.define(version: 20160107021944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,4 +25,22 @@ ActiveRecord::Schema.define(version: 20151227165711) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "guidelines", force: :cascade do |t|
+    t.integer  "blog_id"
+    t.integer  "requirement_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "guidelines", ["blog_id"], name: "index_guidelines_on_blog_id", using: :btree
+  add_index "guidelines", ["requirement_id"], name: "index_guidelines_on_requirement_id", using: :btree
+
+  create_table "requirements", force: :cascade do |t|
+    t.string   "field"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "guidelines", "blogs"
+  add_foreign_key "guidelines", "requirements"
 end
